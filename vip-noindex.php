@@ -8,7 +8,14 @@
  */
 
 if ( defined( 'VIP_GO_APP_ENVIRONMENT' ) && 'production' !== VIP_GO_APP_ENVIRONMENT ) {
-	add_option( 'blog_public', 0 );
+	$is_public = get_option( 'blog_public', '1' );
+
+	if ( '1' === $is_public ) {
+		// Disable the 'Search engine visibility' option if the blog is public.
+		update_option( 'blog_public', '0' );
+	}
+
+	// Show an admin notification.
 	add_action( 'admin_notices', 'admin_indexable_notice' );
 }
 
