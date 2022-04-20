@@ -18,7 +18,6 @@ if ( 'production' !== VIP_GO_APP_ENVIRONMENT || false !== strpos( $_SERVER['HTTP
 	add_action( 'admin_footer', 'disable_blog_public_option' );
 }
 
-
 /**
  * Show an admin notice to inform that search engine visibility has been turned off.
  *
@@ -43,7 +42,7 @@ function disable_blog_public_option() {
 	}
 	?>
 	<script>
-	jQuery('#blog_public').attr("disabled", true);
+		jQuery('#blog_public').attr("disabled", true);
 	</script>
 	<?php
 }
