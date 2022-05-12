@@ -16,8 +16,7 @@ if ( true === $index_noprod_domains || in_array( $_SERVER['SERVER_NAME'], $index
 }
 
 // Block the indexing of non-production sites.
-if ( 'production' !== VIP_GO_APP_ENVIRONMENT || false !== strpos( $_SERVER['HTTP_HOST'] ?? '', '.go-vip.' )
-) {
+if ( 'production' !== VIP_GO_APP_ENVIRONMENT || false !== strpos( $_SERVER['HTTP_HOST'] ?? '', '.go-vip.' ) ) {
 
 	// Discourage search engine indexing.
 	add_filter( 'option_blog_public', '__return_zero' );
